@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-8">
+        <label class="btn btn-default p-0">
+            <input type="file" accept="image/*" multiple (change)="selectFiles($event)" />
+        </label>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="uploadFiles()">
+            Upload
+        </button>
+    </div>
+</div>
+
+<div *ngIf="message.length" class="alert alert-secondary card-container my-3" role="alert">
+    <ul *ngFor="let msg of message; let i = index">
+        <li><a href="{{ msg }}" target="_blank"><img src="{{ msg }}" style="width: 30%;"></a></li>
+    </ul>
+</div>
