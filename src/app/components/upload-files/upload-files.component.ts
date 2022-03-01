@@ -11,7 +11,6 @@ export class UploadFilesComponent implements OnInit {
 
   selectedFiles?: Array<FileList>;
   message: string[] = [];
-  imageInfos?: Observable<any>;
 
   constructor(private uploadService: UploadFilesService) { }
 
@@ -24,8 +23,8 @@ export class UploadFilesComponent implements OnInit {
     if (event.target.files.length === 0) {
       return;
     }
-    for (let i = 0; i < event.target.files.length; i++) {
-      console.log(event.target.files[i]);
+
+    for (let i = 0; i < event.target.files.length; i++) {      
       this.selectedFiles.push(event.target.files[i]);
     }
 
@@ -42,9 +41,7 @@ export class UploadFilesComponent implements OnInit {
       formData.append('file', f)
     });
 
-
     this.upload(formData);
-
   }
 
   upload(file: any): void {

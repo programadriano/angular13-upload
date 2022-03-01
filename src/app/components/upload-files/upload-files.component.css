@@ -1,3 +1,14 @@
 .preview {
-    max-width: 200px;
-  }
+  max-width: 200px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  border: 1px solid black;
+  height: 305px;
+  width: 240px;
+  margin: 10px;
+}

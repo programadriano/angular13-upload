@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 export class UploadFilesService {
 
   private baseUrl = 'http://localhost:5067/';
+
   constructor(private http: HttpClient) { }
+
   upload(file: FileList): Observable<HttpEvent<any>> {   
-    const req = new HttpRequest('POST', `${this.baseUrl}upload`, file, {
-      reportProgress: true,
+    const req = new HttpRequest('POST', `${this.baseUrl}upload`, file, {    
       responseType: 'json'
     });
     return this.http.request(req);

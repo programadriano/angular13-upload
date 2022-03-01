@@ -11,8 +11,12 @@
     </div>
 </div>
 
-<div *ngIf="message.length" class="alert alert-secondary card-container my-3" role="alert">
-    <ul *ngFor="let msg of message; let i = index">
-        <li><a href="{{ msg }}" target="_blank"><img src="{{ msg }}" style="width: 30%;"></a></li>
-    </ul>
+
+<div *ngIf="message.length" class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let msg of message; let i = index">
+            <a href="{{ msg }}" target="_blank"><img src="{{ msg }}" ></a>
+        </div>
+    </div>    
 </div>
+
